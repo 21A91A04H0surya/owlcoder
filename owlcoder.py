@@ -69,8 +69,13 @@ for i in l:
         j+=1
 print(li)'''
 #LEETCODE POTD
-'''import math
-print(math.log2(10))'''
+'''from collections import Counter
+l=list(map(int,input().split()))
+dic=Counter(l)
+for k,v in dic.items():
+    if v==1:
+        print(k)'''
+
 #python bitwise operations
 # Using bitwise operation
 '''binary_number = int('110101', 2)
@@ -134,6 +139,7 @@ for i in range(32):
         c=0
 if c==0:
     print("False")'''
+
 
 
 
