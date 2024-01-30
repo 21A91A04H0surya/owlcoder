@@ -1,25 +1,25 @@
 class Solution:
-    def combinations(self,ind,arr,tar,n,d,o):
-        if ind == n:
-            if tar == 0:
-                f=d.copy()
-                o.append(f)
-            return 
-        #pick
-        if arr[ind] <= tar:
-            d.append(arr[ind])
-            tar=tar-arr[ind]
-            self.combinations(ind,arr,tar,n,d,o)
-            tar=tar+arr[ind]
-            d.pop()
-            #non pick
-        self.combinations(ind+1,arr,tar,n,d,o)        
+    def fun(self,ind,la,arr,o,ans,tar):
+        if ind>=la:return
+        if tar==0:
+            a=o.copy()
+            print(a)
+            ans.append(a)
+        if(arr[ind] > tar): return
+        '''if pick'''
+        if(arr[ind] <= tar):
+            o.append(arr[ind])
+            self.fun(ind,la,arr,o,ans,tar-arr[ind])
+            o.pop()
+        '''non pick'''
+        self.fun(ind+1,la,arr,o,ans,tar)
     def combinationSum(self, arr: List[int], tar: int) -> List[List[int]]:
-        n=len(arr)
-        d=[]
+        ans=[]
         o=[]
-        self.combinations(0,arr,tar,n,d,o)
-        return o
-        
-        
+        #we can do for the multiple cases
+        arr.sort()
+        m=len(arr)
+        self.fun(0,m,arr,o,ans,tar)
+        return ans
+
         
