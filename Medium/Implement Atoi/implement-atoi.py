@@ -8,7 +8,7 @@ class Solution:
         for i in range(len(s)):
             if i==0:
                 if s[i]=='-':
-                    c=1
+                    pass
             else:
                 if ord(s[i])<48 or ord(s[i])>57:
                     return -1
@@ -17,6 +17,9 @@ class Solution:
                 
                 
             
+
+
+
 
 
 #{ 
