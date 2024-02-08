@@ -10,7 +10,7 @@ class Solution:
         for i in range(1,int(math.sqrt(n))+1,1):
             if i*i <= n:
                 d=min(d,1+self.fun(n-i*i,dp))  
-        dp[n]=d
+                dp[n]=d
         return dp[n]        
     def numSquares(self, n: int) -> int:
         dp=[-1 for i in range(n+1)]
