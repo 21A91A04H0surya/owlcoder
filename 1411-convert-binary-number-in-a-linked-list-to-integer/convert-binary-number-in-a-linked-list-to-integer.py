@@ -5,12 +5,11 @@
 #         self.next = next
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
-        s=""
-        t=head
-        while t!= None:
-            s+=str(t.val)
-            t=t.next
-        return int(s,2)
-
+        res=head.val
+        while head.next!=None:
+            res=res*2+head.next.val
+            head=head.next
+        return res
+    
 
         
