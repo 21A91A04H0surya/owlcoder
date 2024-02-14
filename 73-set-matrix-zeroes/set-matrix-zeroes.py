@@ -18,7 +18,7 @@ class Solution:
         for i in d:
             for j in matrix:
                 j[i]=0
-        return matrix
+        
 
        
                 
