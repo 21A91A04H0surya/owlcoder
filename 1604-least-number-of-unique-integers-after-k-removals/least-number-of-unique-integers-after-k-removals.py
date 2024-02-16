@@ -10,17 +10,37 @@ class Solution:
                 d[i]=1
             else:
                 d[i]+=1
-        c=0
-        print(d)
         for ke,v in d.items():
             if k==0:
                 break
-            if v <= k:
+            if v==1:
+                k-=1
+                d[ke]=0
+        if k != 0:
+            for ke,v in d.items():
+                while True:
+                    if k ==0 or v==0:
+                        break
+                    k-=1
+                    d[ke]=v-1
+                    v=v-1
+                if k == 0:
+                    break
+        c=0
+        print(d)
+        for k,v in d.items():
+            if v!=0:
                 c+=1
-                k=k-v
-            else:
-                break
-        return len(d)-c
+        return c
+        
+       
+        
+
+        
+
+        
+
+        
 
     
         
