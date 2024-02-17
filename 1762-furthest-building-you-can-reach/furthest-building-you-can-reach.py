@@ -1,7 +1,7 @@
 import heapq
 class Solution:
     def furthestBuilding(self, l: List[int], bricks: int, ladders: int) -> int:
-        if len(l) == 1 : return 0
+        
         q=[]
         for i in range(len(l) - 1):
             dif = l[i + 1] - l[i]
@@ -13,7 +13,7 @@ class Solution:
                     bricks += -heapq.heappop(q)
     
             if(bricks < 0 and ladders <= 0): return i
-        return i + 1
+        return len(l) - 1
         
         
 
