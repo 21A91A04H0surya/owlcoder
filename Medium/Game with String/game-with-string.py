@@ -1,20 +1,28 @@
 #User function Template for python3
 from collections import Counter
+import heapq
 class Solution:
     def minValue(self, s, k):
         # code here
         d=Counter(s)
         v=list(d.values())
-        while k!=0:
-            v.sort()
-            for i in range(len(v)):
-                v[-1]=v[-1]-1
-                k-=1
-                break
-        s=0
+        heap=[]
         for i in v:
-            s+=i*i
+            heapq.heappush(heap,-i)
+        while k!=0:
+            d=heapq.heappop(heap)
+            d+=1
+            heapq.heappush(heap,d)
+            k-=1
+        s=0
+        for i in heap:
+            s+=(i)*(i)
         return s
+            
+        
+        
+            
+            
         
                     
                 
