@@ -12,8 +12,9 @@ class Solution:
                 if c==n:
                     d+=1
                     return True
-            if d==0:
-                return False
+                if c > n:
+                    return False
+            return False
 
 
         
