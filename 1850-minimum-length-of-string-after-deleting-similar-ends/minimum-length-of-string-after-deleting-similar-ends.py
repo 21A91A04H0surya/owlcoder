@@ -1,6 +1,6 @@
 class Solution:
     def minimumLength(self, s: str) -> int:
-        l=[0]
+        v=0
         i=0
         d=len(s)
         c=0
@@ -8,20 +8,20 @@ class Solution:
         while i<j:
             if s[i]==s[j]:
                 c+=2
-                l[0]=s[i]
+                v=s[i]
                 i+=1
                 j-=1
             elif s[i]!=s[j]:
-                if s[i]==l[0]:
+                if s[i]==v:
                     c+=1
                     i+=1
-                elif s[j]==l[0]:
+                elif s[j]==v:
                     c+=1
                     j-=1
                 else:
                     return d-c
         if i==j:
-            if s[i]==l[0]:
+            if s[i]==v:
                 c+=1
         
 
