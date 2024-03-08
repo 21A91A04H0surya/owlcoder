@@ -11,15 +11,14 @@ class Solution:
             return 1
         else:
             dic=Counter(dif)
-           
             if len(dic)==2:
-               
                 l1=list(dic.keys())
                 l1.sort()
                 if l1[0]==1:
                     return 1
                 return 0
             else:
+                
                 mini=min(dif)
                 for i in dif:
                     if i==mini:
