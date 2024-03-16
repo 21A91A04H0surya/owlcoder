@@ -16,11 +16,11 @@
 '''
 class Solution:
     #Function to delete a node without any reference to head pointer.
-    def deleteNode(self,node):
-        node.data=node.next.data
-        node.next=node.next.next
+    def deleteNode(self,del_node):
+        del_node.data=del_node.next.data
+        del_node.next=del_node.next.next
         
-        #code here
+        
 
 
 #{ 
@@ -93,7 +93,7 @@ if __name__ == '__main__':
         for x in nodes:
             a.append(x)
         del_elem = int(input())
-        to_delete=a.getNode(del_elem)
-        Solution().deleteNode(to_delete)
+        del_node=a.getNode(del_elem)
+        Solution().deleteNode(del_node)
         a.printList()
 # } Driver Code Ends
