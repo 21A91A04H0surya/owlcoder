@@ -5,7 +5,6 @@ class Solution:
         nums.clear()
         for k in dic.keys():
             nums.append(k)
-        nums=nums
         return len(nums)
         
         
