@@ -14,7 +14,7 @@ class Solution:
                 dic[A[i]]=0
             if dic[B[i]]==2:
                 overallcnt+=1
-                dic[B[i]]=0
+                
                 
             result.append(overallcnt)
         return result
